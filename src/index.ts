@@ -1,3 +1,13 @@
+/* CSC-495 Virtual Reality Lecture 2, Fall 2022
+ * Author: Regis Kopper
+ *
+ * Based on
+ * CSC 5619 Lecture 2, Fall 2020
+ * Author: Evan Suma Rosenberg
+ * 
+ * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+ */ 
+
 import { HemisphericLight, UniversalCamera, Vector3 } from "@babylonjs/core";
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
