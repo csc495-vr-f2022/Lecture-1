@@ -1,7 +1,5 @@
 # Lecture 2: Babylon.js and TypeScript
 
-Detailed explanation of this code can be found in the lecture [video](https://mediaspace.umn.edu/media/1_5f2r6ocd).
-
 ## Topics
 
 1. Introduction to Babylon and TypeScript
