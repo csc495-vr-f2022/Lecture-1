@@ -1,21 +1,23 @@
 const { merge } = require('webpack-merge');
 const path = require('path');
+const fs = require('fs');
 const common = require('./webpack.common.js');
+
+// App directory
+const appDirectory = fs.realpathSync(process.cwd());
 
 module.exports = merge(common, {
     mode: 'development',
-    devtool: 'inline-source-map',
 
     devServer: {
-        static: {
-            directory: path.join(__dirname, 'public'),
-          },
-        compress: true,
+        port: 8080, //port that we're using for local host (localhost:8080)
+        static: path.resolve(appDirectory), //tells webpack to serve from the app directory
         hot: true,
         open: true,
-        // host: '0.0.0.0', // enable to access from other devices on the network
+        devMiddleware: {
+            publicPath: "/",
+        },
         // https: true // enable when HTTPS is needed (like in WebXR)
-
-    }    
+    },
 });
 

@@ -1,19 +1,20 @@
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-    CleanWebpackPlugin
-} = require('clean-webpack-plugin');
+// const {
+//     CleanWebpackPlugin
+// } = require('clean-webpack-plugin');
 
 // App directory
 const appDirectory = fs.realpathSync(process.cwd());
 
 module.exports = {
-    resolve: {
-        extensions: ['.ts', '.js']
-    },
+    entry: path.resolve(appDirectory, "src/index.ts"), //path to the main .ts file
     output: {
         filename: 'js/babylonBundle.js',
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
     },
     module: {
         rules: [{
@@ -38,7 +39,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        //new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             inject: true,
             template: path.resolve(appDirectory, "index.html"),
